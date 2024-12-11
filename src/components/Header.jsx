@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../assets/logo.png";
 
 const Header = () => {
     return (
@@ -9,11 +10,11 @@ const Header = () => {
                 </div>
 
                 <img
-                    className="w-8 h-6 rounded mx-3"
-                    src="https://upload.wikimedia.org/wikipedia/commons/3/36/VA_Logo.png"
+                    className="w-10 h-7 rounded mx-3 mt-2"
+                    src={logo}
                     alt="logo"
                 />
-                <h1 className="text-2xl mt-3 italic font-bold text-red-700">
+                <h1 className="text-2xl mt-3 italic font-bold text-[#d42a37]">
                     AmpVideo
                 </h1>
             </div>
