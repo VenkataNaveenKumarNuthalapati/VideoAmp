@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { categories } from "./utils/constants";
 import { useSelector } from "react-redux";
 import useFetchVideos from "./utils/useFetchVideos";
-import VideoCard from "./videoCard";
-import VideoWithHover from "./VideoWithHover";
+import VideoCard from "./VideoCard";
 
 const HomeVideos = () => {
     const [activeTabId, setActiveTabId] = useState(0);

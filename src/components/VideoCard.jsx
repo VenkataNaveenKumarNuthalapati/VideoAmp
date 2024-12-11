@@ -5,11 +5,6 @@ import VideoWithHover from "./VideoWithHover";
 const VideoCard = ({ video }) => {
     return (
         <div className="mt-2 p-2 w-4/12">
-            {/* <img
-                className="rounded-2xl hover:rounded-none transition-all duration-500 w-full"
-                src={video?.snippet?.thumbnails?.medium.url}
-                alt="thumbnail"
-            /> */}
             <VideoWithHover
                 imageUrl={video?.snippet?.thumbnails?.medium.url}
                 id={video.id}
