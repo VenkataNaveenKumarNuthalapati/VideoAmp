@@ -9,7 +9,7 @@ const VideoCard = ({ video }) => {
                 imageUrl={video?.snippet?.thumbnails?.medium.url}
                 id={video.id}
             />
-            <di className="flex mt-2">
+            <div className="flex mt-2">
                 <img
                     className="w-8 h-8 mr-2 mt-1"
                     src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
@@ -28,7 +28,7 @@ const VideoCard = ({ video }) => {
                         {timeAgo(video.snippet?.publishedAt)}
                     </p>
                 </div>
-            </di>
+            </div>
         </div>
     );
 };

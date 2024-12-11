@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { categories } from "./utils/constants";
 import { useSelector } from "react-redux";
 import useFetchVideos from "./utils/useFetchVideos";
+
 import VideoCard from "./VideoCard";
 
 const HomeVideos = () => {
@@ -20,10 +21,10 @@ const HomeVideos = () => {
                     <button
                         className={`${
                             activeTabId === index
-                                ? "bg-black text-white "
-                                : "bg-gray-100 text-black "
-                        }bg-gray-100 ${
-                            activeTabId !== index && "hover:bg-gray-200 "
+                                ? "bg-black text-white"
+                                : "bg-gray-100 text-black"
+                        } ${
+                            activeTabId !== index && "hover:bg-gray-200"
                         } font-medium mx-2 p-1 px-4 whitespace-nowrap rounded-lg`}
                         key={index}
                         onClick={() => setActiveTabId(index)}

@@ -4,7 +4,7 @@ const Sidebar = () => {
     return (
         <div className="w-[70px] flex-col items-center text-center pt-4">
             <div className="hover:bg-gray-100 p-4 rounded-lg ml-1">
-                <i class="fa-solid fa-house text-[17px] mx-2 "></i>
+                <i className="fa-solid fa-house text-[17px] mx-2 "></i>
                 <p className="text-[12px]">Home</p>
             </div>
             <div className="hover:bg-gray-100 p-4 rounded-lg ml-1">
@@ -24,7 +24,7 @@ const Sidebar = () => {
             </div>
             <p className="text-[12px]">Subscriptions</p>
             <div className="hover:bg-gray-100 p-4 rounded-lg ml-1">
-                <i class="fa-solid fa-user text-[23px] mx-2 mt-2"></i>
+                <i className="fa-solid fa-user text-[23px] mx-2 mt-2"></i>
                 <p className="text-[12px]">You</p>
             </div>
         </div>
