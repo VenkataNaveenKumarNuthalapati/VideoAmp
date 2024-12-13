@@ -46,7 +46,6 @@ export const useSearch = (initSetSearchState, initialSuggestions) => {
     };
 
     const handleCloseSearch = () => {
-        console.log(searchState.isSearchOpen);
         initSetSearchState(false);
         setSearchState({
             userText: "",
@@ -65,11 +64,12 @@ export const useSearch = (initSetSearchState, initialSuggestions) => {
         setActiveIndex(-1); // Reset active index
     };
 
-    const handleClearUserInput = () => {
+    const handleClearUserInput = (inputElement) => {
         setSearchState({
             ...searchState,
             userText: "",
         });
+        inputElement.focus();
         setActiveIndex(-1); // Reset active index
     };
 

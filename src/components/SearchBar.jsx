@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useSearch } from "./utils/useSearch"; // Import the custom hook
 
 const SearchBar = ({ isSearchOpen, initSetSearchState }) => {
+    const userInput = useRef(null);
     const {
         searchState,
         suggestions,
@@ -27,6 +28,7 @@ const SearchBar = ({ isSearchOpen, initSetSearchState }) => {
                 <i className="fa-solid fa-backward"></i>
             </button>
             <input
+                ref={userInput}
                 value={searchState.userText}
                 onChange={handleInputChange}
                 onKeyDown={handleKeyDown} // Add keydown handler
@@ -37,7 +39,7 @@ const SearchBar = ({ isSearchOpen, initSetSearchState }) => {
             {searchState.userText ? (
                 <button
                     className="rounded-r-full border border-gray-400 p-1 px-2 bg-gray-100 hover:bg-gray-200"
-                    onClick={handleClearUserInput}
+                    onClick={() => handleClearUserInput(userInput.current)}
                 >
                     <i className="fa-solid fa-x px-[2px]"></i>
                 </button>
