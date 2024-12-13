@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { SEARCH_API_URL } from "./constants";
 import { setsSuggestions } from "../store/videoSlice";
 
-export const useSearch = (initSetSearchState, initialSuggestions) => {
+export const useSearch = (initSetSearchState) => {
     const [searchState, setSearchState] = useState({
         userText: "",
         isSuggestionOpen: false,
@@ -18,11 +18,16 @@ export const useSearch = (initSetSearchState, initialSuggestions) => {
     const suggestions = searchSuggestions[searchState.userText] || [];
 
     useEffect(() => {
-        getSuggestions();
+        let timer;
+        if (searchState.userText) {
+            timer = setTimeout(() => getSuggestions(), 200);
+        }
+        return () => clearTimeout(timer);
     }, [searchState.userText]);
 
     const getSuggestions = async () => {
         if (!searchSuggestions[searchState.userText]) {
+            console.log("Fetch Called");
             const data = await fetch(SEARCH_API_URL + searchState.userText);
             const json = await data.json();
             dispatch(setsSuggestions({ key: json[0], result: json[1] }));
