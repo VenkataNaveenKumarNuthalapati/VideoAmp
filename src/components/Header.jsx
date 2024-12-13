@@ -49,10 +49,10 @@ const Header = () => {
                         <i className="fa-solid fa-magnifying-glass text-[17px]"></i>
                     </div>
                 )}
-                <div className="w-[32px] md:hidden text-center rounded-full p-1 hover:bg-gray-100">
+                <div className="w-[32px] text-center rounded-full p-1 hover:bg-gray-100">
                     <i className="fa-regular fa-bell text-[20px]"></i>
                 </div>
-                <div className="w-[32px] md:hidden text-center rounded-full p-1 hover:bg-gray-100">
+                <div className="w-[32px] text-center rounded-full p-1 hover:bg-gray-100">
                     <i className="fa-solid fa-video  text-[20px]"></i>
                 </div>
 
