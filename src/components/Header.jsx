@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/logo.png";
+import { useDispatch } from "react-redux";
+import { setMenuOpen } from "./store/videoSlice";
+import SearchBar from "./SearchBar";
 
 const Header = () => {
+    const [isSearchOpen, setSearchState] = useState(false);
+    const dispatch = useDispatch();
+
+    const handleMenuClick = () => {
+        dispatch(setMenuOpen());
+    };
+
+    const toggleSearchVisibility = () => {
+        setSearchState(true);
+    };
+
     return (
-        <header className="bg-white p-2 px-4 flex justify-between items-center w-full fixed top-0">
-            <div className="flex items-center">
-                <div className="hover:bg-gray-100 p-2 px-4">
+        <header className="flex flex-wrap bg-white p-2 px-4 justify-between items-center w-full top-0">
+            <div className="w-7/12 md:w-4/12 flex items-center">
+                <div
+                    className="hover:bg-gray-100 p-2 md:px-4"
+                    onClick={handleMenuClick}
+                >
                     <i className="fa-sharp fa-solid fa-bars hover:bg-gray-100 text-[20px] mt-1"></i>
                 </div>
 
@@ -18,21 +35,20 @@ const Header = () => {
                     AmpVideo
                 </h1>
             </div>
-            <div className="flex w-[40%] justify-center items-center">
-                <input
-                    className="w-full outline-none focus:ring-1 border border-gray-400 border-r-0 p-1 px-4 rounded-l-full"
-                    type="text"
-                    placeholder="Search"
-                />
-
-                <button className="rounded-r-full border border-gray-400 p-1 px-2  bg-gray-100 hover:bg-gray-200">
-                    <i className="fa-solid fa-magnifying-glass"></i>
-                </button>
-                <div className="bg-gray-100 ml-4 p-2 px-3 rounded-full  hover:bg-gray-200">
-                    <i className="fa-solid fa-microphone text-[20px]"></i>
+            {!isSearchOpen && (
+                <div
+                    className="w-[32px] md:hidden text-center rounded-full p-1 hover:bg-gray-100"
+                    onClick={toggleSearchVisibility}
+                >
+                    <i className="fa-solid fa-magnifying-glass text-[17px]"></i>
                 </div>
-            </div>
-            <div className="flex items-center gap-7">
+            )}
+
+            <SearchBar
+                isSearchOpen={isSearchOpen}
+                initSetSearchState={setSearchState}
+            />
+            <div className="w-4/12 order-2 md:order-3 md:w-3/12 flex items-center gap-7 justify-end">
                 <i className="fa-regular fa-bell text-[20px]"></i>
                 <i className="fa-solid fa-video  text-[20px]"></i>
                 <img

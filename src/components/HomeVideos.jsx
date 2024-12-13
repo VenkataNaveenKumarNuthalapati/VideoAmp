@@ -33,7 +33,7 @@ const HomeVideos = () => {
                     </button>
                 ))}
             </ul>
-            <div className="flex flex-wrap m-2 justify-center">
+            <div className="flex flex-wrap mt-2 justify-center">
                 {videoList.map((video) => (
                     <VideoCard key={video.id} video={video} />
                 ))}

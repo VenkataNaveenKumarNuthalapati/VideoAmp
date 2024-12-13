@@ -1,8 +1,14 @@
 import React from "react";
-
+import { useSelector } from "react-redux";
 const Sidebar = () => {
+    const { isMenuOpen } = useSelector((store) => store.videos);
+
     return (
-        <div className="w-[70px] flex-col items-center text-center pt-4">
+        <div
+            className={`${
+                !isMenuOpen && "hidden md:block"
+            } px-1 md:w-[70px] flex-col items-center text-center md:pt-4`}
+        >
             <div className="hover:bg-gray-100 p-4 rounded-lg ml-1">
                 <i className="fa-solid fa-house text-[17px] mx-2 "></i>
                 <p className="text-[12px]">Home</p>

@@ -4,7 +4,7 @@ import VideoWithHover from "./VideoWithHover";
 
 const VideoCard = ({ video }) => {
     return (
-        <div className="mt-2 p-2 w-4/12">
+        <div className="mt-2 py-2 w-full px-2 md:w-4/12">
             <VideoWithHover
                 imageUrl={video?.snippet?.thumbnails?.medium.url}
                 id={video.id}

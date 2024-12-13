@@ -5,15 +5,9 @@ const VideoWithHover = ({ imageUrl, id }) => {
 
     return (
         <div
-            className="video-container mt-2 p-2"
+            className="relative h-[250px] cursor-pointer mt-2 p-2"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            style={{
-                position: "relative",
-                // width: "560px",
-                height: "200px",
-                cursor: "pointer",
-            }}
         >
             {!isHovered && (
                 <div
@@ -25,7 +19,7 @@ const VideoWithHover = ({ imageUrl, id }) => {
                         width: "100%",
                         height: "100%",
                         background: `url('${imageUrl}') no-repeat center center / cover`,
-                        zIndex: 1,
+                        zIndex: -1,
                     }}
                 />
             )}
@@ -41,6 +35,7 @@ const VideoWithHover = ({ imageUrl, id }) => {
                         width: "100%",
                         height: "100%",
                         border: "none",
+                        zIndex: -1,
                         background: `url('${imageUrl}') no-repeat center center / cover`,
                     }}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

@@ -4,13 +4,14 @@ import { lazy, Suspense } from "react";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import HomeVideos from "./components/HomeVideos";
+
 // const HomeVideos = lazy(() => import('./HomeVideos'))
 
 function App() {
     return (
         <div className="h-screen m-0">
             <Header />
-            <div className="flex h-full pt-14">
+            <div className="flex h-full ">
                 <Sidebar />
                 <Outlet />
             </div>
