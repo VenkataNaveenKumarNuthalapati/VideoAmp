@@ -75,7 +75,7 @@ const WatchVideo = () => {
     );
 
     return (
-        <div className="w-full px-2 mt-14 overflow-y-scroll hide-scrollbar">
+        <div className="w-full px-2 md:mt-14 overflow-y-scroll hide-scrollbar">
             <div className="flex-wrap md:flex">
                 {getVideoFrameJSX()}
                 {getLiveChatJSX()}
