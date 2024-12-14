@@ -22,8 +22,22 @@ export const categories = [
     "New to you",
 ];
 
+export const API_CATEGORIES_URL =
+    "https://youtube.googleapis.com/youtube/v3/videoCategories?part=snippet&regionCode=US&key=" +
+    import.meta.env.VITE_ACCESS_KEY;
+
+export const API_SEARCH_URL =
+    "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&key=" +
+    import.meta.env.VITE_ACCESS_KEY +
+    "&q=";
+
+export const API_LIVE_URL =
+    "https://youtube.googleapis.com/youtube/v3/search?part=snippet&eventType=live&maxResults=25&type=video&key=" +
+    import.meta.env.VITE_ACCESS_KEY +
+    "&q=";
+
 export const API_URL =
-    "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=US&key=" +
+    "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=" +
     import.meta.env.VITE_ACCESS_KEY;
 
 export const SEARCH_API_URL =
