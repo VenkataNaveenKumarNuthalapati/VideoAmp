@@ -85,7 +85,8 @@ const WatchVideo = () => {
                     className="text-[20px] font-semibold cursor-pointer"
                     onClick={toggleComments}
                 >
-                    {countNestedReplies(comments)} Comments
+                    {countNestedReplies(comments)} Comments{" "}
+                    {!isCommentsVisible ? "⬇️" : "⬆️"}
                 </h1>
                 {isCommentsVisible && <Comments comments={comments} />}
             </div>
@@ -93,9 +94,7 @@ const WatchVideo = () => {
     );
 
     const getRelatedVideosJSX = () => (
-        <div className="w-full md:w-5/12 mt-4 bg-gray-300 h-full">
-            Related Videos
-        </div>
+        <div className="w-full mt-4">Related Videos</div>
     );
 
     return (
