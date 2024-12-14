@@ -17,7 +17,15 @@ const useWatchVideo = (videoId) => {
         const interval = setInterval(async () => {
             const data = await fetch("https://apis.ccbp.in/jokes/random");
             const json = await data.json();
-            setChatMessages((prevMessages) => [json.value, ...prevMessages]);
+
+            setChatMessages((prevMessages) => {
+                const updatedMessages = [json.value, ...prevMessages];
+                // Ensure the array length does not exceed 200
+                if (updatedMessages.length > 200) {
+                    updatedMessages.splice(-1, 1); // Remove the last message
+                }
+                return updatedMessages;
+            });
         }, 2000);
 
         return () => clearInterval(interval);
@@ -28,14 +36,8 @@ const useWatchVideo = (videoId) => {
         setIsDescriptionOpen((prevState) => !prevState);
     };
 
-    // Redux state for selected video
-    const videoState = useSelector((state) => state?.videos?.videoList || []);
-    const selectedVideo =
-        videoState.find((video) => video.id === videoId) || {};
-
     return {
         videoObjDetails,
-        selectedVideo,
         chatMessages,
         isDescriptionOpen,
         toggleDescription,
