@@ -34,3 +34,7 @@ export const CHANNEL_API =
     "id=UC_x5XG1OV2P6uZZ5FSM9Ttw" +
     "&key=" +
     import.meta.env.VITE_ACCESS_KEY;
+
+export const SPEC_VIDEO_BASE_PATH =
+    "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=";
+// Ks-_Mh1QhMc&key="+import.meta.env.VITE_ACCESS_KEY

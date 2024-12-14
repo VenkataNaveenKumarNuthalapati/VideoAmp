@@ -40,3 +40,15 @@ export const formatViews = (views) => {
         return views.toString(); // Return as-is if less than 1000
     }
 };
+
+// Recursive function to count nested replies
+export const countNestedReplies = (replies) => {
+    if (!replies || replies.length === 0) return 0;
+    return (
+        replies.length +
+        replies.reduce(
+            (acc, reply) => acc + countNestedReplies(reply.replies),
+            0
+        )
+    );
+};

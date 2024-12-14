@@ -6,10 +6,8 @@ const Sidebar = () => {
     return (
         <div
             className={`${
-                !isMenuOpen
-                    ? "translate-x-0 "
-                    : "-translate-x-[85px] md:translate-x-0"
-            } bg-white pr-2 md:w-[80px] flex-col items-center text-center md:pt-4 absolute md:relative transition-all duration-500`}
+                isMenuOpen ? "translate-x-0" : "-translate-x-[85px]"
+            } bg-white pr-2 md:w-[80px] flex-col items-center text-center md:pt-4 md:mt-12 absolute md:relative transition-all duration-500`}
         >
             <div className="hover:bg-gray-100 p-1 py-2 text-center rounded-lg ml-2">
                 <i className="fa-solid fa-house text-[17px] mx-2 "></i>

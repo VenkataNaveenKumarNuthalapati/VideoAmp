@@ -27,7 +27,6 @@ export const useSearch = (initSetSearchState) => {
 
     const getSuggestions = async () => {
         if (!searchSuggestions[searchState.userText]) {
-            console.log("Fetch Called");
             const data = await fetch(SEARCH_API_URL + searchState.userText);
             const json = await data.json();
             dispatch(setsSuggestions({ key: json[0], result: json[1] }));

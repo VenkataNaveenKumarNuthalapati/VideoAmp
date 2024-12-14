@@ -4,6 +4,7 @@ import { lazy, Suspense } from "react";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import HomeVideos from "./components/HomeVideos";
+import WatchVideo from "./components/WatchVideo";
 
 // const HomeVideos = lazy(() => import('./HomeVideos'))
 
@@ -28,6 +29,11 @@ const routes = [
             {
                 path: "/",
                 element: <HomeVideos />,
+                children: [],
+            },
+            {
+                path: "watch/:videoId",
+                element: <WatchVideo />,
                 children: [],
             },
         ],
