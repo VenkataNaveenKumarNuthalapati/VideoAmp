@@ -5,7 +5,7 @@ const VideoWithHover = ({ imageUrl, id }) => {
 
     return (
         <div
-            className="relative h-[250px] md:h-[210px] cursor-pointer mt-2 p-2"
+            className="relative h-[250px] md:h-[280px] cursor-pointer mt-2 p-2"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
