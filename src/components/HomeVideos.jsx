@@ -16,7 +16,7 @@ const HomeVideos = () => {
 
     return (
         <div className="w-[100%] overflow-y-scroll hide-scrollbar p-2">
-            <ul className="flex mt-1 overflow-x-scroll hide-scrollbar">
+            <ul className="flex mt-14 overflow-x-scroll hide-scrollbar">
                 {categories.map((eachCat, index) => (
                     <button
                         className={`${
